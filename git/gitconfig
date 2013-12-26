@@ -1,0 +1,15 @@
+#
+# Include this file from the ~/.gitconfig file using: 
+# [include]
+#	path = /path/to/here
+#
+
+[core]
+        editor = vim
+[color]
+        ui = true
+[alias]
+        st = status
+        br = branch
+        l = log
+        co = checkout
