@@ -4,6 +4,8 @@
 #	path = /path/to/here
 #
 
+[user]
+	name = Barak Naveh
 [core]
         editor = vim
 [color]
@@ -13,3 +15,7 @@
         br = branch
         l = log
         co = checkout
+
+# set a 'simple' push.default to prevent silly mistakes
+[push]
+        default = simple
