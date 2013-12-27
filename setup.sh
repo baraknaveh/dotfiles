@@ -11,6 +11,6 @@ this_dir=$(cd "$(dirname "$0")"; pwd)
 "$this_dir/vim/setup-vim.sh"
 
 echo "Setting up github defaults for $this_dir"
-pushd "$this_dir"
+pushd "$this_dir" > /dev/null
 source "$this_dir/git/setup-github.sh"
-popd
+popd > /dev/null
