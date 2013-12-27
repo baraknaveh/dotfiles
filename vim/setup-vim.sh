@@ -16,4 +16,6 @@ then
 	echo "Appending the following to $vimrc:"
 	echo "source $my_vimrc" | tee -a "$vimrc"
 	echo
+else
+	echo "$vimrc already includes $my_vimrc"
 fi
