@@ -6,9 +6,11 @@
 
 this_dir=$(cd "$(dirname "$0")"; pwd)
 
-"$this_dir/vim/setup-vim.sh"
 "$this_dir/git/setup-gitconfig.sh"
+"$this_dir/tmux/setup-tmux.sh"
+"$this_dir/vim/setup-vim.sh"
 
-cd "$this_dir"
+echo "Setting up github defaults for $this_dir"
+pushd "$this_dir"
 source "$this_dir/git/setup-github.sh"
-
+popd
