@@ -1,0 +1,4 @@
+# Make sure to mkdir ~/.vim/undo
+
+set undodir=~/.vim/undo
+set undofile
