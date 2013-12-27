@@ -1,3 +1,19 @@
 #!/bin/bash
 
-mkdir -p ~/.vim/undo
+vimrc=~/.vimrc
+
+if [ ! -f "$vimrc" ]
+then
+	touch "$vimrc"
+fi
+
+this_dir=$(cd "$(dirname "$0")"; pwd)
+
+my_vimrc="$this_dir/vimrc"
+
+if ! grep --quiet "$my_vimrc" "$vimrc"
+then
+	echo "Appending the following to $vimrc:"
+	echo "source $my_vimrc" | tee -a "$vimrc"
+	echo
+fi
