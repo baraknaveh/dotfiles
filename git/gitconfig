@@ -1,11 +1,11 @@
 #
 # Include this file from the ~/.gitconfig file using: 
 # [include]
-#	path = /path/to/here
+#       path = /path/to/here
 #
 
 [user]
-	name = Barak Naveh
+        name = Barak Naveh
 [core]
         editor = vim
 [color]

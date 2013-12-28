@@ -1,0 +1,21 @@
+#
+# Source this file from ~/.bashrc
+#
+
+# History management
+export HISTSIZE=130000
+export SAVEHIST=130000
+history -a
+
+# Set vi as an editor whenever possible
+export EDITOR=vim
+set -o vi
+
+# Some useful shortcuts
+alias gfrb="git fetch ; git rebase"
+alias rb="git rebase"
+alias gd="git diff"
+alias st="git status"
+alias br="git branch"
+alias tmux="tmux -2"
+
