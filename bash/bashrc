@@ -12,7 +12,6 @@ export EDITOR=vim
 set -o vi
 
 # Some useful shortcuts
-alias ll="ls -la"
 alias gfrb="git fetch ; git rebase"
 alias rb="git rebase"
 alias gd="git diff"
