@@ -15,7 +15,3 @@
         br = branch
         l = log
         co = checkout
-
-# set a 'simple' push.default to prevent silly mistakes
-[push]
-        default = simple
