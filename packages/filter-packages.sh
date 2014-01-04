@@ -1,12 +1,12 @@
 #!/bin/bash
 #
-# Select tools from the tool repository using the specified list of tags.
-# The tools selected are tagged with ALL the specified tags (AND relation).
+# Select packages from the package repository using the specified list of tags.
+# The packages selected are tagged with ALL the specified tags (AND relation).
 #
 
 ME="$0"
 MY_DIR=$(cd "$(dirname "$ME")"; pwd)
-REPO="$MY_DIR/tools.cfg"
+REPO="$MY_DIR/packages.cfg"
 
 if [ $# -eq 0 ]
 then
