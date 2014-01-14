@@ -5,7 +5,14 @@
 # History management
 export HISTSIZE=130000
 export SAVEHIST=130000
-history -a
+
+# Make history shared and in sync across all sessions
+shopt -s histappend
+if [ "$PROMPT_COMMAND" == "" ]; then
+    PROMPT_COMMAND="history -a; history -n"
+else
+    PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -n"
+fi
 
 # Set vi as an editor whenever possible
 export EDITOR=vim
