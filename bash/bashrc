@@ -13,6 +13,11 @@ if [ "$PROMPT_COMMAND" == "" ]; then
 else
     PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -n"
 fi
+# Allow Ctrl-S to be used for forward history search as in:
+# http://www.gnu.org/software/bash/manual/html_node/Searching.html
+# However Ctrl-S collides with XON/XOFF flow control. The following command
+# disables XON/XOFF
+stty -ixon
 
 # Set vi as an editor whenever possible
 export EDITOR=vim
