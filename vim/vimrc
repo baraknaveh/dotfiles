@@ -19,7 +19,7 @@ autocmd BufReadPost *
 " The following works on vim 7.3 and higher
 if exists('+colorcolumn')
   " this trick was picked up from: http://bit.ly/1gkOYQU
-  let &colorcolumn="80,".join(range(100,999),",")
+  let &colorcolumn=join(range(80,999),",")
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
 endif
 
