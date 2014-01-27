@@ -16,9 +16,11 @@ autocmd BufReadPost *
 \ endif |
 \ endif
 
+" The following works on vim 7.3 and higher
 if exists('+colorcolumn')
-  set colorcolumn=80
-  highlight ColorColumn ctermbg=246
+  " this trick was picked up from: http://bit.ly/1gkOYQU
+  let &colorcolumn="80,".join(range(100,999),",")
+  highlight ColorColumn ctermbg=235 guibg=#2c2d27
 endif
 
 set tabstop=8 shiftwidth=2 expandtab
