@@ -28,7 +28,7 @@ autocmd BufReadPost *
 \ endif
 
 " The following works on vim 7.3 and higher
-if exists('+colorcolumn')
+if exists('+colorcolumn') && (! &diff)
   " this trick was picked up from: http://bit.ly/1gkOYQU
   let &colorcolumn=join(range(80,300),",")
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
@@ -47,5 +47,9 @@ autocmd FileType c,cpp,java,php,ruby,python,sh,bashrc,vimrc autocmd BufWritePre 
 " Turn syntax highlighting off in vimdiff to reduce noise
 if &diff
   syntax off
+  highlight DiffAdd term=reverse cterm=bold ctermbg=black ctermfg=darkgreen
+  highlight DiffDelete term=reverse cterm=bold ctermbg=black ctermfg=darkred
+  highlight DiffChange term=reverse cterm=bold ctermbg=black ctermfg=yellow
+  highlight DiffText term=reverse cterm=bold ctermbg=magenta ctermfg=black
 endif
 

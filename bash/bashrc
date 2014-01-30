@@ -32,6 +32,7 @@ alias rb="git rebase"
 alias gd="git diff"
 alias st="git status"
 alias br="git branch"
+alias gt="git difftool"
 alias tmux="tmux -2"
 alias grep="grep --color=auto"
 
