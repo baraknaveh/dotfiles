@@ -15,3 +15,9 @@
         br = branch
         l = log
         co = checkout
+
+[diff]
+        tool = vimdiff
+
+[difftool]
+        prompt = false
