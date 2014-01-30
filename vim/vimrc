@@ -1,3 +1,7 @@
+"
+" A vimrc file to be source-ed from the ~/.vimrc
+"
+
 set nocompatible        " Use Vim defaults (much better!)
 set backspace=2         " allow backspacing over everything in insert mode
 set ai                  " auto indenting
@@ -12,7 +16,8 @@ set incsearch           " Enable incremental search
 
 set wildmenu
 set wildmode=list:longest
-
+set confirm             " Instead of failing commands that require confirmation
+                        " prompt for this confirmation.
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -38,3 +43,4 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 autocmd FileType c,cpp,java,php,ruby,python,sh,bashrc,vimrc autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
