@@ -1,4 +1,5 @@
 set nocompatible        " Use Vim defaults (much better!)
+set backspace=2         " allow backspacing over everything in insert mode
 set ai                  " auto indenting
 set history=100         " keep 100 lines of history
 set ruler               " show the cursor position
@@ -7,6 +8,11 @@ set hlsearch            " highlight the last searched term
 filetype plugin on      " use the file type plugins
 set viminfo='20,\"50    " read/write a .viminfo file, don't store more
                         " than 50 lines of registers
+set incsearch           " Enable incremental search
+
+set wildmenu
+set wildmode=list:longest
+
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -24,7 +30,6 @@ if exists('+colorcolumn')
 endif
 
 set tabstop=8 shiftwidth=2 expandtab
-set backspace=2    " http://vim.wikia.com/wiki/Erasing_previously_entered_characters_in_insert_mode
 
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
