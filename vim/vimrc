@@ -19,11 +19,12 @@ autocmd BufReadPost *
 " The following works on vim 7.3 and higher
 if exists('+colorcolumn')
   " this trick was picked up from: http://bit.ly/1gkOYQU
-  let &colorcolumn=join(range(80,999),",")
+  let &colorcolumn=join(range(80,300),",")
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
 endif
 
 set tabstop=8 shiftwidth=2 expandtab
+set backspace=2    " http://vim.wikia.com/wiki/Erasing_previously_entered_characters_in_insert_mode
 
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
