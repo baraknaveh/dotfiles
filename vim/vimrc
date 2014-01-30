@@ -16,7 +16,7 @@ set incsearch           " Enable incremental search
 
 set wildmenu
 set wildmode=list:longest
-"set confirm             " Instead of failing commands that require confirmation
+set confirm             " Instead of failing commands that require confirmation
                         " prompt for this confirmation.
 
 " When editing a file, always jump to the last cursor position
