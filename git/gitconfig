@@ -13,6 +13,7 @@
 [alias]
         st = status
         br = branch
+        dt = difftool
         l = log
         co = checkout
 
