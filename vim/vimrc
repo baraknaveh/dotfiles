@@ -44,3 +44,8 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd FileType c,cpp,java,php,ruby,python,sh,bashrc,vimrc autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+" Turn syntax highlighting off in vimdiff to reduce noise
+if &diff
+  syntax off
+endif
+
