@@ -50,6 +50,6 @@ if &diff
   highlight DiffAdd term=reverse cterm=bold ctermbg=black ctermfg=darkgreen
   highlight DiffDelete term=reverse cterm=bold ctermbg=black ctermfg=darkred
   highlight DiffChange term=reverse cterm=bold ctermbg=black ctermfg=white
-  highlight DiffText term=reverse cterm=bold ctermbg=magenta ctermfg=yellow
+  highlight DiffText term=reverse cterm=bold ctermbg=darkblue ctermfg=magenta
 endif
 
