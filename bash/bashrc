@@ -10,9 +10,10 @@ export SAVEHIST=130000
 shopt -s histappend
 if [ "$PROMPT_COMMAND" == "" ]; then
     PROMPT_COMMAND="history -a; history -n"
-else
+elif [[ ! "$PROMPT_COMMAND" =~ "history -a; history -n" ]]; then
     PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -n"
 fi
+
 # Allow Ctrl-S to be used for forward history search as in:
 # http://www.gnu.org/software/bash/manual/html_node/Searching.html
 # However Ctrl-S collides with XON/XOFF flow control. The following command
