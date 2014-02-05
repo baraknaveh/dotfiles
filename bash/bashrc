@@ -54,3 +54,14 @@ Linux)
     ;;
 esac
 
+# Dedupe the $PATH
+CLEAN_PATH=""
+for p in `echo "$PATH" | tr ":" "\n"`
+do
+    if [[ ! ":$CLEAN_PATH:" =~ ":$p:" ]]; then
+        CLEAN_PATH="$CLEAN_PATH$p:"
+    fi
+done
+export PATH="${CLEAN_PATH%:}"
+unset CLEAN_PATH
+
