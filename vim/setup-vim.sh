@@ -13,7 +13,7 @@ my_vimrc="$this_dir/vimrc"
 
 if ! grep --quiet "$my_vimrc" "$vimrc"
 then
-	echo "Appending the following to $vimrc:"
+	echo "Appending to $vimrc:"
 	echo "source $my_vimrc" | tee -a "$vimrc"
 	echo
 else
