@@ -15,7 +15,8 @@ cd $BUILD_DIR
 
 echo "Building in $BUILD_DIR"
 
-wget -c ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2
+MIRROR="http://ftp.vim.org/pub/vim"
+wget -c "$MIRROR/unix/vim-7.4.tar.bz2"
 tar -xjvf vim-7.4.tar.bz2
 
 cd vim74
