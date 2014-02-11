@@ -17,14 +17,14 @@ echo "Building in $BUILD_DIR"
 
 MIRROR="http://ftp.vim.org/pub/vim"
 wget -c "$MIRROR/unix/vim-7.4.tar.bz2"
-tar -xjvf vim-7.4.tar.bz2
+tar -xjf vim-7.4.tar.bz2
 
 cd vim74
 rm -rf src/auto/config.cache
 
 make clean
 ./configure --with-features=huge --enable-perlinterp --enable-rubyinterp \
-            --enable-pythoninterp
+            --enable-pythoninterp --with-compiledby="$USER"
 make
 
 echo "If the build succeeded, you can install the shiny new vim by typing:"
