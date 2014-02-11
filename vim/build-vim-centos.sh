@@ -10,6 +10,7 @@ sudo yum install ruby perl-devel python-devel ruby-devel perl-ExtUtils-Embed \
          ncurses-devel
 
 BUILD_DIR="/tmp/vim-build.$USER"
+mkdir -p $BUILD_DIR
 cd $BUILD_DIR
 
 echo "Building in $BUILD_DIR"
