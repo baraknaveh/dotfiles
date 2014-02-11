@@ -36,21 +36,6 @@ endif
 
 set tabstop=8 shiftwidth=2 expandtab
 
-" Speller goodies
-set spell spelllang=en_us
-let s:own_path = expand('<sfile>:h')
-" Following is a local file to add my words. Cursor on a marked word and 'zg'.
-let &spellfile= s:own_path . '/spell/spell-en.utf-8.add'
-" Styling the speller highlighting
-highlight clear SpellBad
-highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
-highlight clear SpellCap
-"highlight SpellCap term=underline cterm=underline
-highlight clear SpellRare
-"highlight SpellRare term=underline cterm=underline
-highlight clear SpellLocal
-highlight SpellLocal term=underline cterm=underline
-
 " What the name says
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
@@ -67,5 +52,20 @@ if &diff
   highlight DiffDelete term=reverse cterm=bold ctermbg=black ctermfg=darkred
   highlight DiffChange term=reverse cterm=bold ctermbg=black ctermfg=white
   highlight DiffText term=reverse cterm=bold ctermbg=darkblue ctermfg=magenta
+else
+  " Otherwise, enable spelling goodies
+  set spell spelllang=en_us
+  let s:own_path = expand('<sfile>:h')
+  " Following is a local file to add my words. Cursor on a marked word and 'zg'.
+  let &spellfile= s:own_path . '/spell/spell-en.utf-8.add'
+  " Styling the speller highlighting
+  highlight clear SpellBad
+  highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+  highlight clear SpellCap
+  "highlight SpellCap term=underline cterm=underline
+  highlight clear SpellRare
+  "highlight SpellRare term=underline cterm=underline
+  highlight clear SpellLocal
+  highlight SpellLocal term=underline cterm=underline
 endif
 
