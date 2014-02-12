@@ -65,3 +65,11 @@ done
 export PATH="${CLEAN_PATH%:}"
 unset CLEAN_PATH
 
+# Makes an audible cue. E.g., to notify that a long operation finished.
+tada() {
+for i in {1..5}
+do
+   printf '\a'
+   sleep 0.2
+done
+}
