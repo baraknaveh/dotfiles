@@ -2,6 +2,8 @@
 " A vimrc file to be source-ed from the ~/.vimrc
 "
 
+" TODO: check out http://kien.github.io/ctrlp.vim/
+
 set nocompatible        " Use Vim defaults (much better!)
 set backspace=2         " allow backspacing over everything in insert mode
 set ai                  " auto indenting
@@ -34,7 +36,7 @@ if exists('+colorcolumn') && (! &diff)
   highlight ColorColumn ctermbg=235 guibg=#2c2d27
 endif
 
-set tabstop=8 shiftwidth=2 expandtab
+set tabstop=8 shiftwidth=2 expandtab softtabstop=2
 
 " What the name says
 fun! <SID>StripTrailingWhitespaces()
