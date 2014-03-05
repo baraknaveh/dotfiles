@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<profiles>
+<profile formatter="org.eclipse.koneki.ldt.editor.LuaFormatterFactory" name="Lua formatting" version="1">
+<setting id="formatter.indentation.size" value="4"/>
+<setting id="formatter.tabulation.char" value="space"/>
+<setting id="formatter.tabulation.size" value="4"/>
+<setting id="formatter.indentation.indentTables" value="true"/>
+</profile>
+</profiles>
