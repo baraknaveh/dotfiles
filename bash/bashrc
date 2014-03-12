@@ -26,6 +26,13 @@ fi
 export EDITOR=vim
 set -o vi
 
+# color less
+cless() {
+    pygmentize -f terminal "$1" | less --RAW-CONTROL-CHARS
+}
+
+export LESS="--RAW-CONTROL-CHARS"
+
 # Some useful shortcuts
 alias ll="ls -la"
 alias gfrb="git fetch ; git rebase"
