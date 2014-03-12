@@ -28,7 +28,7 @@ set -o vi
 
 # color less
 cless() {
-    pygmentize -f terminal "$1" | less --RAW-CONTROL-CHARS
+    LESS="--RAW-CONTROL-CHARS" LESSOPEN="| pygmentize %s" less "$@"
 }
 
 export LESS="--RAW-CONTROL-CHARS"
