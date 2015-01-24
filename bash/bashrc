@@ -82,3 +82,9 @@ do
    sleep 0.2
 done
 }
+
+# Follow the advice given here:
+# http://seclists.org/fulldisclosure/2014/Nov/74
+# "on Linux, 'less' can probably get you owned"
+unset LESSOPEN
+unset LESSCLOSE
