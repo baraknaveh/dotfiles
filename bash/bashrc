@@ -58,6 +58,14 @@ Darwin)
     # LSCOLORS generator: http://geoff.greer.fm/lscolors/
     export CLICOLOR=1
     export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
+    # If latest vim was installed by brew, used it instead the OSX default
+    if [ -f /usr/local/bin/vim ]
+    then
+        alias vim=/usr/local/bin/vim
+        alias vi=/usr/local/bin/vim
+        alias vimdiff=/usr/local/bin/vim
+    fi
     ;;
 Linux)
     ;;
