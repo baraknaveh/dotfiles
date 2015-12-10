@@ -96,3 +96,9 @@ done
 # "on Linux, 'less' can probably get you owned"
 unset LESSOPEN
 unset LESSCLOSE
+
+# add bash completion to brew
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
