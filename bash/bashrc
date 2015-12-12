@@ -97,7 +97,8 @@ done
 unset LESSOPEN
 unset LESSCLOSE
 
-# add bash completion to brew
+# Add bash completion to brew. For this to work, first install:
+# $ brew install bash-completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
