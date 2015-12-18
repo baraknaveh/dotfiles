@@ -47,6 +47,10 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd FileType c,cpp,java,php,ruby,python,sh,bashrc,vimrc autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+" Allow vim to change crontab (discussion at: http://goo.gl/RcZdGJ)
+autocmd FileType crontab setlocal nowritebackup
+
+
 " Turn syntax highlighting off in vimdiff to reduce noise
 if &diff
   syntax off
