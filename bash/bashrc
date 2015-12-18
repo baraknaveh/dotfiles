@@ -31,15 +31,57 @@ cless() {
     LESS="--RAW-CONTROL-CHARS" LESSOPEN="| pygmentize %s" less "$@"
 }
 
+find_up() {
+    if [ $# != 1 ]; then
+        echo "Usage: find_up <dir>" 1>&2
+    fi
+    dir="$1"
+    for i in $(seq 0 $(pwd|tr -cd '/'|wc -c)); do
+        if [ -d "$dir" ]; then
+            echo "$dir"
+            return 0
+        else
+            dir="../$dir"
+        fi
+    done
+    echo "$1 not found"
+    return 1
+}
+
 export LESS="--RAW-CONTROL-CHARS"
 
 # Some useful shortcuts
 alias ll="ls -la"
 alias gfrb="git fetch ; git rebase"
 alias rb="git rebase"
-alias gd="git diff"
-alias st="git status"
-alias br="git branch"
+gd() {
+    if find_up .git > /dev/null; then
+        git diff "$@"
+    elif find_up .hg > /dev/null; then
+        hg diff "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+st() {
+    if find_up .git > /dev/null; then
+        git status "$@"
+    elif find_up .hg > /dev/null; then
+        hg status "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+br() {
+    if find_up .git > /dev/null; then
+        git branch "$@"
+    elif find_up .hg > /dev/null; then
+        hg book "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+
 alias gt="git difftool"
 alias tmux="tmux -2"
 alias grep="grep --color=auto"
