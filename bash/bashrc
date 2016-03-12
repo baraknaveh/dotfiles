@@ -44,8 +44,6 @@ export LESS="--RAW-CONTROL-CHARS"
 
 # Some useful shortcuts
 alias ll="ls -la"
-alias gfrb="git fetch ; git rebase"
-alias rb="git rebase"
 gd() {
     if find_up .git > /dev/null; then
         git diff "$@"
@@ -69,6 +67,24 @@ br() {
         git branch "$@"
     elif find_up .hg > /dev/null; then
         hg book "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+rb() {
+    if find_up .git > /dev/null; then
+        git rebase "$@"
+    elif find_up .hg > /dev/null; then
+        hg rebase "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+gfrb() {
+    if find_up .git > /dev/null; then
+        git fetch; git rebase "$@"
+    elif find_up .hg > /dev/null; then
+        hg pull; hg rebase "$@"
     else
         echo "Not under VCS"
     fi
