@@ -53,6 +53,15 @@ gd() {
         echo "Not under VCS"
     fi
 }
+gl() {
+    if find_up .git > /dev/null; then
+        git log "$@"
+    elif find_up .hg > /dev/null; then
+        hg log "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
 st() {
     if find_up .git > /dev/null; then
         git status "$@"
