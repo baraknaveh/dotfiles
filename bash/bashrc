@@ -111,7 +111,8 @@ export LS_COLORS='rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5
 # Set up SCM prompt.
 # The following works only if the function "_dotfiles_scm_info" is defined and
 # outputs the desired scm info. You can find such a function. E.g., see
-# https://github.com/wavesoftware/scmprompt
+# https://github.com/wavesoftware/scmprompt or 
+# https://github.com/ryanmce/dotfiles/blob/master/scm-prompt.sh
 if type -t _dotfiles_scm_info > /dev/null; then
     preprompt() {
 	branch="$(_dotfiles_scm_info)"
