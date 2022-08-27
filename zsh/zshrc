@@ -1,0 +1,127 @@
+#
+# Source this file from ~/.zshrc
+#
+
+# History management
+export HISTSIZE=130000
+export SAVEHIST=130000
+
+# Set vi as an editor whenever possible
+export EDITOR=vim
+set -o vi
+
+# Colored less. Requires installing Pygments
+cless() {
+    LESS="--RAW-CONTROL-CHARS" LESSOPEN="| pygmentize %s" less "$@"
+}
+
+find_up() {
+    if [ $# != 1 ]; then
+        echo "Usage: find_up <dir>" 1>&2
+    fi
+    dir="$1"
+    for i in $(seq 0 $(pwd|tr -cd '/'|wc -c)); do
+        if [ -d "$dir" ]; then
+            echo "$dir"
+            return 0
+        else
+            dir="../$dir"
+        fi
+    done
+    echo "$1 not found"
+    return 1
+}
+
+export LESS="--RAW-CONTROL-CHARS"
+
+# Some useful shortcuts
+alias ll="ls -la"
+gd() {
+    if find_up .git > /dev/null; then
+        git diff "$@"
+    elif find_up .hg > /dev/null; then
+        hg diff "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+gl() {
+    if find_up .git > /dev/null; then
+        git log "$@"
+    elif find_up .hg > /dev/null; then
+        hg log "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+st() {
+    if find_up .git > /dev/null; then
+        git status "$@"
+    elif find_up .hg > /dev/null; then
+        hg status "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+br() {
+    if find_up .git > /dev/null; then
+        git branch "$@"
+    elif find_up .hg > /dev/null; then
+        hg book "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+rb() {
+    if find_up .git > /dev/null; then
+        git rebase "$@"
+    elif find_up .hg > /dev/null; then
+        hg rebase "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+gfrb() {
+    if find_up .git > /dev/null; then
+        git fetch; git rebase "$@"
+    elif find_up .hg > /dev/null; then
+        hg pull; hg rebase "$@"
+    else
+        echo "Not under VCS"
+    fi
+}
+
+alias gt="git difftool"
+alias tmux="tmux -2"
+alias grep="grep --color=auto"
+alias ..="cd .."
+
+# Make history shared and in sync across all sessions
+# > can try to get it from bash, or find a native zsh solution for this.
+
+# Dedupe the $PATH
+CLEAN_PATH=""
+for p in `echo "$PATH" | tr ":" "\n"`
+do
+    if [[ ! ":$CLEAN_PATH:" =~ ":$p:" ]]; then
+        CLEAN_PATH="$CLEAN_PATH$p:"
+    fi
+done
+export PATH="${CLEAN_PATH%:}"
+unset CLEAN_PATH
+
+# Makes an audible cue. E.g., to notify that a long operation finished.
+tada() {
+for i in {1..5}
+do
+   printf '\a'
+   sleep 0.2
+done
+}
+
+# Follow the advice given here:
+# http://seclists.org/fulldisclosure/2014/Nov/74
+# "on Linux, 'less' can probably get you owned"
+unset LESSOPEN
+unset LESSCLOSE
+
