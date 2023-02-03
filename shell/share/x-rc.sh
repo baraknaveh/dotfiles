@@ -6,14 +6,6 @@
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 
-# Allow Ctrl-S to be used for forward history search as in:
-# http://www.gnu.org/software/bash/manual/html_node/Searching.html
-# However Ctrl-S collides with XON/XOFF flow control. The following command
-# disables XON/XOFF
-if [ -t 0 ]; then   # only run if stdin is a terminal
-    stty -ixon
-fi
-
 # Set vi as an editor whenever possible
 export EDITOR=vim
 set -o vi
