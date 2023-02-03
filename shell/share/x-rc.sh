@@ -127,6 +127,12 @@ Linux)
     ;;
 esac
 
+# Set PATH, MANPATH, etc., for Homebrew.
+if [ -f /opt/homebrew/bin/brew ]
+then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Dedupe the $PATH
 CLEAN_PATH=""
 for p in `echo "$PATH" | tr ":" "\n"`
