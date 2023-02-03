@@ -21,6 +21,10 @@ elif [[ ! "$PROMPT_COMMAND" =~ "history -a; history -n" ]]; then
     PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -n"
 fi
 
+# More history settings
+export HISTCONTROL=ignoredups       # Skip dupes when searching history
+# export HISTTIMEFORMAT="[%F %T] "  # Optional 
+
 # Set up SCM prompt.
 # The following works only if the function "_dotfiles_scm_info" is defined and
 # outputs the desired scm info. You can find such a function. E.g., see
