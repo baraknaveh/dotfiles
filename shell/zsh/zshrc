@@ -18,3 +18,5 @@ setopt INC_APPEND_HISTORY  # Add commands to history immediately, not only upon 
 setopt EXTENDED_HISTORY    # Record timestamp of each command
 setopt HIST_FIND_NO_DUPS   # Skip dupes when searching history
 setopt SHARE_HISTORY       # Share history between terminal sessions
+
+bindkey '^R' history-incremental-search-backward
