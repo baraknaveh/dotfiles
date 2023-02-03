@@ -13,7 +13,6 @@ else
 fi
 unset shared_rc this_dir
 
-
 # Make history shared and in sync across all sessions
 shopt -s histappend
 if [ "$PROMPT_COMMAND" == "" ]; then
@@ -21,3 +20,22 @@ if [ "$PROMPT_COMMAND" == "" ]; then
 elif [[ ! "$PROMPT_COMMAND" =~ "history -a; history -n" ]]; then
     PROMPT_COMMAND="$PROMPT_COMMAND; history -a; history -n"
 fi
+
+# Set up SCM prompt.
+# The following works only if the function "_dotfiles_scm_info" is defined and
+# outputs the desired scm info. You can find such a function. E.g., see
+# https://github.com/wavesoftware/scmprompt or 
+# https://github.com/ryanmce/dotfiles/blob/master/scm-prompt.sh
+if type -t _dotfiles_scm_info > /dev/null; then
+    preprompt() {
+	branch="$(_dotfiles_scm_info)"
+	colored_branch=$'\e[38;5;162m'$'\e[48;5;234m'"$branch"$'\e[m'
+	if [ -n "$branch" ]
+	then
+	    printf "%$((`tput cols`+25))s`tput cr`" "$colored_branch"
+	fi
+    }
+    PROMPT_COMMAND=preprompt
+fi
+
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] '
