@@ -115,23 +115,15 @@ Darwin)
     #     alias vimdiff=/usr/local/bin/vim
     # fi
 
-    # Add brew completion for bash. For this to work, first install:
-    # $ brew install bash-completion
-    if which brew > /dev/null ; then
-        if [ -f $(brew --prefix)/etc/bash_completion ]; then
-            . $(brew --prefix)/etc/bash_completion
-        fi
+    # Set PATH, MANPATH, etc., for Homebrew.
+    if [ -f /opt/homebrew/bin/brew ]
+    then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
     ;;
 Linux)
     ;;
 esac
-
-# Set PATH, MANPATH, etc., for Homebrew.
-if [ -f /opt/homebrew/bin/brew ]
-then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
 
 # Dedupe the $PATH
 CLEAN_PATH=""
