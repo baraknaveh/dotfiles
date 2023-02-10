@@ -15,7 +15,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Selected plugins from https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 plugins=(
-    git
     macos
     rust
 )
