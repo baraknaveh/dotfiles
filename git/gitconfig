@@ -1,5 +1,5 @@
 #
-# Include this file from the ~/.gitconfig file using: 
+# Include this file from the ~/.gitconfig file using:
 # [include]
 #       path = /path/to/here
 #
