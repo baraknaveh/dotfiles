@@ -13,6 +13,20 @@ else
 fi
 unset shared_rc this_dir
 
+case `uname` in
+Darwin)
+    if type brew &>/dev/null
+    then
+        FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+        autoload -Uz compinit
+        compinit
+    fi
+    ;;
+Linux)
+    ;;
+esac
+
 # History settings
 setopt INC_APPEND_HISTORY  # Add commands to history immediately, not only upon shell exit
 setopt EXTENDED_HISTORY    # Record timestamp of each command
