@@ -6,6 +6,7 @@
 
 [user]
         name = Barak Naveh
+        email = baraknaveh@users.noreply.github.com
 [core]
         editor = vim
 [color]
