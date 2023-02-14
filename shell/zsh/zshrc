@@ -13,8 +13,10 @@ else
 fi
 unset shared_rc this_dir
 
+# OS based initialization
 case `uname` in
 Darwin)
+    # Add brew command completions
     if type brew &>/dev/null
     then
         FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
