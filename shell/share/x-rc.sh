@@ -127,6 +127,12 @@ Linux)
     ;;
 esac
 
+# If we do Rust on this machine, add cargo bin to path
+if [ -d "$HOME/.cargo" ]
+then
+    export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 # Dedupe the $PATH
 CLEAN_PATH=""
 for p in `echo "$PATH" | tr ":" "\n"`
