@@ -47,7 +47,7 @@ gd() {
 }
 gl() {
     if find_up .git > /dev/null; then
-        git log "$@"
+        git log --graph --all --decorate --oneline "$@"
     elif find_up .hg > /dev/null; then
         hg log "$@"
     else
