@@ -47,7 +47,7 @@ gd() {
 }
 gl() {
     if find_up .git > /dev/null; then
-        git log --graph --all --decorate --oneline "$@"
+        git log --all --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset' "$@"
     elif find_up .hg > /dev/null; then
         hg log "$@"
     else
