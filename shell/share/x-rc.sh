@@ -158,3 +158,6 @@ done
 # "on Linux, 'less' can probably get you owned"
 unset LESSOPEN
 unset LESSCLOSE
+
+# Use sccache to speed up cargo builds
+export RUSTC_WRAPPER="sccache"
