@@ -146,11 +146,11 @@ unset CLEAN_PATH
 
 # Makes an audible cue. E.g., to notify that a long operation finished.
 tada() {
-for i in {1..5}
-do
-   printf '\a'
-   sleep 0.2
-done
+    for i in {1..5}
+    do
+        printf '\a'
+        sleep 0.2
+    done
 }
 
 # Follow the advice given here:
