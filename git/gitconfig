@@ -20,7 +20,8 @@
 
 [diff]
         tool = vimdiff
-
+[pager]
+        branch = false
 [difftool]
         prompt = false
 [pull]
