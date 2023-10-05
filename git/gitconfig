@@ -18,7 +18,6 @@
         dt = difftool
         l = log
         co = checkout
-
 [diff]
         tool = vimdiff
 [pager]
@@ -27,3 +26,5 @@
         prompt = false
 [pull]
 	rebase = true
+[fetch]
+        prune = true
