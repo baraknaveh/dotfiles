@@ -9,6 +9,7 @@
         email = baraknaveh@users.noreply.github.com
 [core]
         editor = vim
+        pager = less -X
 [color]
         ui = true
 [alias]
