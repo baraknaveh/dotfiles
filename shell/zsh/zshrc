@@ -36,3 +36,8 @@ setopt HIST_FIND_NO_DUPS   # Skip dupes when searching history
 setopt SHARE_HISTORY       # Share history between terminal sessions
 
 bindkey '^R' history-incremental-search-backward
+
+# AWS CLI command completion
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
