@@ -18,6 +18,7 @@
         dt = difftool
         l = log
         co = checkout
+        sw = switch
 [diff]
         tool = vimdiff
 [pager]
