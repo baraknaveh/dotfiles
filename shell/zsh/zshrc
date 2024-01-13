@@ -41,3 +41,9 @@ bindkey '^R' history-incremental-search-backward
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
+
+# right prompt: return code and virtualenv
+RPS1="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+if (( $+functions[virtualenv_prompt_info] )); then
+  RPS1+='$(virtualenv_prompt_info)'
+fi

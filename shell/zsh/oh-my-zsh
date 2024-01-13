@@ -8,7 +8,7 @@ ZSH_THEME="af-magic"          # Nice & informative but adds a divider line
 #ZSH_THEME="cypher"            # Food colors but doesn't give git branch
 #ZSH_THEME="garyblessington"   # Simple and effective but not beautiful
 #ZSH_THEME="terminalparty"     # Nice & informative but path on the right
-#ZSH_THEME="robbyrussell"      # Informative but unfortunage color choice
+#ZSH_THEME="robbyrussell"      # Informative but unfortunate color choice
 
 # Command execution timestamp shown in the history command output.
 HIST_STAMPS="yyyy-mm-dd"
