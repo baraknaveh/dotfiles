@@ -3,6 +3,8 @@
 # [include]
 #       path = /path/to/here
 #
+# More options: https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+#
 
 [user]
         name = Barak Naveh
@@ -29,3 +31,5 @@
 	rebase = true
 [fetch]
         prune = true
+[rebase]
+        autostash = true
