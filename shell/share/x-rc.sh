@@ -97,7 +97,7 @@ alias grep="grep --color=auto"
 alias ..="cd .."
 alias dof="cd ~/dotfiles"
 alias tc="cd ~/tcode"
-alias main="git checkout main"
+alias main="git switch main"
 alias swc="git switch -c "
 
 # LS_COLORS seems to not be needed anymore (2023-02-10)
