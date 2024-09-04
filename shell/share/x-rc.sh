@@ -91,7 +91,6 @@ gfrb() {
     fi
 }
 
-alias gt="git difftool"
 alias tmux="tmux -2"
 alias grep="grep --color=auto"
 alias ..="cd .."
