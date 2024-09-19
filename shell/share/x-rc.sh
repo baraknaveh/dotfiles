@@ -162,6 +162,8 @@ unset LESSCLOSE
 
 # Use sccache to speed up cargo builds
 export RUSTC_WRAPPER="sccache"
+# Trying to cap cache size, not sure if it works
+export SCCACHE_CACHE_SIZE="50G"
 
 # Set up Docker env and completion
 export NVM_DIR="$HOME/.nvm"
