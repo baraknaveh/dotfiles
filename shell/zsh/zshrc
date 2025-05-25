@@ -4,6 +4,7 @@
 
 # Pick up shared settings for zsh and bash
 this_dir="$(dirname "$0")"
+source "$this_dir/uv-completions.zsh"
 shared_rc="$this_dir/../share/x-rc.sh"
 if [ -f "$shared_rc" ]
 then
