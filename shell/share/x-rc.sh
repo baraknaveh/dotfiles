@@ -96,6 +96,7 @@ alias grep="grep --color=auto"
 alias ..="cd .."
 alias dof="cd ~/dotfiles"
 alias tc="cd ~/tcode"
+alias tc2="cd ~/tcode-02"
 alias main="git switch main"
 alias swc="git switch -c "
 
