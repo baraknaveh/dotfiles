@@ -37,7 +37,7 @@ export LESS="--RAW-CONTROL-CHARS"
 # Some useful shortcuts
 alias ll="ls -la"
 gd() {
-    if find_up .git > /dev/null; then
+    if git rev-parse --show-toplevel > /dev/null; then
         git diff "$@"
     elif find_up .hg > /dev/null; then
         hg diff "$@"
@@ -46,7 +46,7 @@ gd() {
     fi
 }
 gl() {
-    if find_up .git > /dev/null; then
+    if git rev-parse --show-toplevel > /dev/null; then
         git log --all --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset' "$@"
     elif find_up .hg > /dev/null; then
         hg log "$@"
@@ -55,7 +55,7 @@ gl() {
     fi
 }
 st() {
-    if find_up .git > /dev/null; then
+    if git rev-parse --show-toplevel > /dev/null; then
         git status "$@"
     elif find_up .hg > /dev/null; then
         hg status "$@"
@@ -64,7 +64,7 @@ st() {
     fi
 }
 br() {
-    if find_up .git > /dev/null; then
+    if git rev-parse --show-toplevel > /dev/null; then
         git branch "$@"
     elif find_up .hg > /dev/null; then
         hg book "$@"
@@ -73,7 +73,7 @@ br() {
     fi
 }
 rb() {
-    if find_up .git > /dev/null; then
+    if git rev-parse --show-toplevel > /dev/null; then
         git rebase "$@"
     elif find_up .hg > /dev/null; then
         hg rebase "$@"
@@ -82,7 +82,7 @@ rb() {
     fi
 }
 gfrb() {
-    if find_up .git > /dev/null; then
+    if git rev-parse --show-toplevel > /dev/null; then
         git fetch; git rebase "$@"
     elif find_up .hg > /dev/null; then
         hg pull; hg rebase "$@"
