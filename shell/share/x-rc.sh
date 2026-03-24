@@ -97,6 +97,7 @@ alias ..="cd .."
 alias dof="cd ~/dotfiles"
 alias tc="cd ~/tcode"
 alias tc2="cd ~/tcode-02"
+alias tc3="cd ~/tcode-3"
 alias main="git switch main"
 alias swc="git switch -c "
 
