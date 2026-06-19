@@ -171,3 +171,6 @@ export SCCACHE_CACHE_SIZE="50G"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Use hardened pnpm supply-chain security
+pnpm_config_trust_lockfile=false
