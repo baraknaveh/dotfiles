@@ -1,0 +1,8 @@
+#
+# Personal identity. Included from gitconfig for repos whose remote
+# uses the github-personal SSH alias.
+#
+
+[user]
+    name = Barak Naveh
+    email = baraknaveh@users.noreply.github.com

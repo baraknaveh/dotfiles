@@ -6,30 +6,32 @@
 # More options: https://jvns.ca/blog/2024/02/16/popular-git-config-options/
 #
 
+
 [user]
-        name = Barak Naveh
-        email = baraknaveh@users.noreply.github.com
+    # Note: the personal user details are under gitconfig-personal
+    useConfigOnly = true
+
 [core]
-        editor = vim
-        pager = less -X
+    editor = vim
+    pager = less -X
 [color]
-        ui = true
+    ui = true
 [alias]
-        st = status
-        br = branch
-        dt = difftool
-        l = log
-        co = checkout
-        sw = switch
+    st = status
+    br = branch
+    dt = difftool
+    l = log
+    co = checkout
+    sw = switch
 [diff]
-        tool = vimdiff
+    tool = vimdiff
 [pager]
-        branch = false
+    branch = false
 [difftool]
-        prompt = false
+    prompt = false
 [pull]
-	rebase = true
+    rebase = true
 [fetch]
-        prune = true
+    prune = true
 [rebase]
-        autostash = true
+    autostash = true
