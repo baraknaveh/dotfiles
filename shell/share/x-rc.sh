@@ -36,6 +36,8 @@ export LESS="--RAW-CONTROL-CHARS"
 
 # Some useful shortcuts
 alias ll="ls -la"
+
+unalias gd 2>/dev/null
 gd() {
     if git rev-parse --show-toplevel > /dev/null; then
         git diff "$@"
@@ -45,6 +47,8 @@ gd() {
         echo "Not under VCS"
     fi
 }
+
+unalias gl 2>/dev/null
 gl() {
     if git rev-parse --show-toplevel > /dev/null; then
         git log --all --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset' "$@"
@@ -54,6 +58,7 @@ gl() {
         echo "Not under VCS"
     fi
 }
+
 st() {
     if git rev-parse --show-toplevel > /dev/null; then
         git status "$@"
